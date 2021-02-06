@@ -2,15 +2,15 @@ source 'http://rubygems.org'
 
 gem 'sinatra'
 gem 'activerecord', '~> 4.2', '>= 4.2.6', :require => 'active_record'
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'  #gives access to prebuilt rake tasks
 gem 'rake'
-gem 'require_all'
-gem 'sqlite3', '~> 1.3.6'
-gem 'thin'
-gem 'shotgun'
-gem 'pry'
-gem 'bcrypt'
-gem 'tux'
+gem 'require_all'         #lets us require all app files at once
+gem 'sqlite3', '~> 1.3.6' #database we are using
+gem 'thin'                #server we are using
+gem 'shotgun'             #allows automatic refresh
+gem 'pry'                 #debugging tool
+gem 'bcrypt'              #handles authentication password_digest
+gem 'tux'                 #associations sandbox for objects
 
 group :test do
   gem 'rspec'
