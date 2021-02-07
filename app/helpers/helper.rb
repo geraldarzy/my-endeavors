@@ -6,8 +6,8 @@ class Helper
         !!session_hash[:id]
     end
     def self.rightuser?(params,session) #makes sure URLparams and session are same people (params input HAS to be params[:username])
-        if self.is_logged_in?
-            !!User.find_by(username: params[:username]) == User.find(session[:id])
+        if self.is_logged_in?(session)
+            User.find_by(username: params[:username]) == User.find(session[:id])
         end
-    end
+    end #checks to see if URLparams username matches session username by == for id
 end
