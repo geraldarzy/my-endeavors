@@ -11,4 +11,10 @@ class ApplicationController < Sinatra::Base
     erb :home
   end
 
+  #personalized users homepage
+  get "/users/:username"do
+    @user = Helper.current_user(session)
+    erb :"users/home"
+  end
+
 end
