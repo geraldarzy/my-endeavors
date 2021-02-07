@@ -3,6 +3,7 @@ class CreateEndeavorsTable < ActiveRecord::Migration[5.2]
     create_table :endeavors do |t|
       t.string :title
       t.text :description
+      t.integer :user_id
     end
   end
 end
