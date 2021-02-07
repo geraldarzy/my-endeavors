@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
     #users login
     get '/login' do
+        #session.clear      #logs you out when u try to log in again(implement this into header)
         erb :"users/login"
     end
 

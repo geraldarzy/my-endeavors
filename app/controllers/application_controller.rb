@@ -14,7 +14,11 @@ class ApplicationController < Sinatra::Base
   #personalized users homepage
   get "/users/:username"do
     @user = Helper.current_user(session)
-    erb :"users/home"
+    if @user == User.find_by(username: params[:username])
+      erb :"users/home"
+    else
+      erb :error #leads you to error if you @user does not match params[:username]
+    end
   end
 
 end
