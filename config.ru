@@ -6,4 +6,5 @@ end
 
 use UserController
 use SessionsController
+use EndeavorController
 run ApplicationController
