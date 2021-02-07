@@ -5,4 +5,5 @@ if ActiveRecord::Base.connection.migration_context.needs_migration?
 end
 
 use UserController
+use SessionsController
 run ApplicationController
