@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-
     <title>MyEndeavors</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <header>
+    <nav>
+      <ul>
+        <%if Helper.is_logged_in?(session)%>
+          <li>
+            <a href="/users/<%=@user.username%>">Home</a>
+          </li>
+          <li>
+            <a href="/users/<%=@user.username%>/endeavors">My Endeavors</a>
+          </li>
+          <li>
+            <a href="/users/<%=@user.username%>/endeavors/new">Create</a>
+          </li>
+          <li>
+            <a href="/logout">Logout</a>
+          </li>
+        <%else%>
+          <li><a href="/">Home</a></li>
+          <li>My Endeavors</li>
+          <li><a href="/users/new">Sign up</a></li>
+          <li><a href="/login">Log in</a></li>
+        <%end%>
+      </ul>
+    </nav>
+  </header>
+  <hr>
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
     <div class="wrapper">
+      
 
         <%= yield %>
 
@@ -23,10 +41,7 @@
       </footer>
     </div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <!--[if lt IE 7]>
-      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-    <![endif]-->
+   
+   
   </body>
 </html>
