@@ -1,0 +1,14 @@
+<h1><%=@endeavor.title%></h1> <br>
+<h4><%=@endeavor.description%></h4><br>
+<br>
+<br>
+Make your edits here:
+<br>
+<br>
+<form action="/users/<%=@user.username%>/endeavors/<%=@endeavor.id%>" method = "POST">
+<input type="hidden" name="_method" id="hidden" value="patch">
+New Title: <input type="text" name="endeavor[title]" value="<%=@endeavor.title%>" ><br>
+New Description: <input type="text" name="endeavor[description]" value="<%=@endeavor.description%>" ><br>
+<br>
+<input type="submit" value="Confirm Edit">
+</form>

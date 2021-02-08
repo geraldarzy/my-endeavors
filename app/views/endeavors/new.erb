@@ -1,0 +1,10 @@
+<form action="/users/<%=Helper.current_user(session).username%>/endeavors" method="POST">
+    What would you like to call your new endeavor?:<br>
+    <input type="text" name="endeavor[title]">
+    <br>
+    Give a short description about this endeavor: <br>
+    <input type="text" name="endeavor[description]"> <br> 
+    <br>
+    <input type="submit" value="Create this endeavor!"><br>
+    <%=@error%>
+</form>

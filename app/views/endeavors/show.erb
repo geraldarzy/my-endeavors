@@ -1,0 +1,29 @@
+<h3>Hello, <%=@user.username%></h3>
+
+<br>
+
+<h1><%=@endeavor.title%></h1><br>
+<%=@endeavor.description%> <br>
+
+<br>
+<br>
+
+<%if @users_endeavors.count>1%>
+    Here are your other endeavors: <br><br>
+    <%@users_endeavors.each do |e|%>
+        <%if !(e==@endeavor)%>
+            <p> •<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </p>
+        <%end%>
+    <%end%>
+<%end%>
+<br>
+<br>
+Click <a href="/users/<%=@user.username%>/endeavors">here</a> to go back to list. 
+<br>
+Click <a href="/users/<%=@user.username%>/endeavors/<%=@endeavor.id%>/edit">here</a> to edit this endeavor.
+<br>
+
+<form action="/users/<%=@user.username%>/endeavors/<%=@endeavor.id%>" method="POST">
+    <input type="hidden" name="_method" id="hidden" value="delete">
+    <input type="submit" value="Delete">
+</form>

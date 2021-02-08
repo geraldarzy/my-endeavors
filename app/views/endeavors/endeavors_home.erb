@@ -1,0 +1,9 @@
+<h1>Hello, <%=@user.username%>!</h1>
+<h4>Here are all your endeavors!</h4>
+<br>
+<ul>
+    <%@endeavors.each do |e|%>
+        <li><h3>•<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3></li><br>
+    <%end%>
+</ul>
+
