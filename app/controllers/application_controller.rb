@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    session.clear
     erb :home
   end
 
