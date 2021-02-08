@@ -6,6 +6,7 @@ class EndeavorController < ApplicationController
 
     #CREATE
     get "/users/:username/endeavors/new" do
+        @user = Helper.current_user(session)
         if Helper.rightuser?(params,session) #checks to see if URLparams username matches session username by == for id
             erb :"endeavors/new"
         else
