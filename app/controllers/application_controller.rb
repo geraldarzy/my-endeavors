@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
   get "/users/:username"do
     @user = Helper.current_user(session)
     if @user == User.find_by(username: params[:username])
-      erb :"users/home"
+      erb :"users/user_home"
     else
       erb :error #leads you to error if you @user does not match params[:username]
     end
