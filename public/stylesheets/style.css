@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Raleway:wght@500&display=swap');
+* {
+list-style: none;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Raleway', sans-serif;
+}
+h1 {
+    font-family: 'Fjalla One', sans-serif;
+}
+h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+background-color: rgb(250, 168, 61);
+color: #333;
+font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+background: rgb(241, 205, 107);
+-moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+-webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+box-shadow: 0 0 10px rgba(0,0,0,.3);
+margin: 16px auto;
+max-width: 960px;
+padding: 2.25%; /* 18px / 800px */
+width: 85%;
+}
+footer.branding {
+border-top: 2px solid #ccc;
+margin-top: 20px;
+padding-top: 20px;
+}
+
+.nav li {
+display: inline;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+}
+
+.nav a:hover{
+    background-color: rgba(255,255,255,.3);
+}
+.main-nav {
+    text-align: center;
+    font-size: 1.1em;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+}
+.main-nav li {
+    padding: 0 3%;
+}
+.user-home-welcome{
+    font-size: 4em;
+    text-align: right;
+}
+.user-home-slogan{
+    font-size: 1em;
+    text-align: right;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: rgb(255, 156, 27);
+}
+.buttons {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 8px 8px;
+    display: inline-block;
+    border-radius: 8px;
+    border: 2px solid rgb(250, 168, 61);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    margin: auto;
+    transition: 0.5s;
+    
+}
+
+.buttons:after {
+    content: '\00bb';
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}   
+.buttons:hover {
+    padding-right: 25px;
+  }
+  
+.buttons:hover:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .pictures{
+      margin:auto;
+  }
+
+  .user-home-buttons{
+      padding: 15px 32px;
+  }

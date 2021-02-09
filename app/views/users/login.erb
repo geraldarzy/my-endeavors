@@ -9,7 +9,7 @@
         <form action="/login" method = 'POST'>
             username: <input type="text" name="user[username]" > <br>
             password: <input type="password" name="user[password]" ><br>
-            <input type="submit" value="Log in!"><br>
+            <input class = "buttons" type="submit" value="Log in!"><br>
             <%=@error%>
             <br>
             <br>
@@ -17,7 +17,7 @@
             <br>
             <br>
             Don't have an account? Sign up now. <br>
-           <button> <a href="/signup">Sign up</a></button>
+           <button class = "buttons" > <a href="/signup">Sign up</a></button>
         </form>
 
         <footer>

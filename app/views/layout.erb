@@ -2,35 +2,34 @@
 
   <head>
     <title>MyEndeavors</title>
-  <header>
-    <nav>
-      <ul>
-        <%if Helper.is_logged_in?(session)%>
-          <li>
-            <a href="/users/<%=@user.username%>">Home</a>
-          </li>
-          <li>
-            <a href="/users/<%=@user.username%>/endeavors">My Endeavors</a>
-          </li>
-          <li>
-            <a href="/users/<%=@user.username%>/endeavors/new">Create</a>
-          </li>
-          <li>
-            <a href="/logout">Logout</a>
-          </li>
-        <%else%>
-          <li><a href="/">Home</a></li>
-          <li>My Endeavors</li>
-          <li><a href="/signup">Sign up</a></li>
-          <li><a href="/login">Log in</a></li>
-        <%end%>
-      </ul>
-    </nav>
-  </header>
-  <hr>
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <header class="main-header">
+      <nav class = "nav main-nav">
+        <ul>
+          <%if Helper.is_logged_in?(session)%>
+            <li>
+              <a href="/users/<%=@user.username%>">Home</a>
+            </li>
+            <li>
+              <a href="/users/<%=@user.username%>/endeavors">My Endeavors</a>
+            </li>
+            <li>
+              <a href="/users/<%=@user.username%>/endeavors/new">Create</a>
+            </li>
+            <li>
+              <a href="/logout">Logout</a>
+            </li>
+          <%else%>
+            <li><a href="/">Home</a></li>
+            <li>My Endeavors</li>
+            <li><a href="/signup">Sign up</a></li>
+            <li><a href="/login">Log in</a></li>
+          <%end%>
+        </ul>
+      </nav>
+    </header>
     <div class="wrapper">
       
 
