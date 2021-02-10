@@ -1,9 +1,22 @@
-<h1>Hello, <%=@user.username.capitalize%>!</h1>
-<h4>Here are all your endeavors!</h4>
-<br>
+<h1>Hello, <%=@user.username.capitalize%>!</h1><br><br><br><br>
+<h4>Here are your endeavors you have yet to accomplish!</h4>
 <ul>
     <%@endeavors.each do |e|%>
-        <li><h3>•<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3></li><br>
+        <li>
+            <%if !(e.status == 'completed')%>
+                <h3>•<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3>
+            <%end%>
+        </li><br>
     <%end%>
 </ul>
-
+<br><br>
+<h4>Here are your endeavors that you HAVE accomplished!</h4><br>
+<ul>
+    <%@endeavors.each do |e|%>
+        <li>
+            <%if (e.status == 'completed')%>
+                <h3>•<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3>
+            <%end%>
+        </li><br>
+    <%end%>
+</ul>
