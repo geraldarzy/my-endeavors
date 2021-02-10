@@ -2,21 +2,21 @@
 <h4>Here are your endeavors you have yet to accomplish!</h4>
 <ul>
     <%@endeavors.each do |e|%>
-        <li>
             <%if !(e.status == 'completed')%>
+                <li>
                 <h3>•<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3>
+                </li><br>
             <%end%>
-        </li><br>
     <%end%>
 </ul>
 <br><br>
 <h4>Here are your endeavors that you HAVE accomplished!</h4><br>
 <ul>
     <%@endeavors.each do |e|%>
-        <li>
             <%if (e.status == 'completed')%>
-                <h3>•<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3>
+                <li>
+                    <h3>•<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3>
+                </li><br>
             <%end%>
-        </li><br>
     <%end%>
 </ul>
