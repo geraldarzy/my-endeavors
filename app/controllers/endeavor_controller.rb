@@ -86,6 +86,7 @@ class EndeavorController < ApplicationController
             @endeavor.description = params[:endeavor][:description]
             @endeavor.pic = params[:endeavor][:pic]
             @endeavor.pic_caption =params[:endeavor][:pic_caption]
+            @endeavor.status = params[:endeavor][:status]
             
             if params[:endeavor][:title].blank? || params[:endeavor][:description].blank?
                 @error = "This endeavor must have a tile and description. Do not leave it blank."
