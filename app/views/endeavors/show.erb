@@ -26,9 +26,9 @@
     <%end%>
     <br>
     <br>
-    Click <a href="/users/<%=@user.username%>/endeavors">here</a> to go back to list. 
+    <button class="buttons"><a href="/users/<%=@user.username%>/endeavors">My Endeavors</a> </button>
     <br>
-    Click <a href="/users/<%=@user.username%>/endeavors/<%=@endeavor.id%>/edit">here</a> to edit this endeavor.
+    <button class="buttons"><a href="/users/<%=@user.username%>/endeavors/<%=@endeavor.id%>/edit">Edit</a> </button>
     <br>
     
     <form action="/users/<%=@user.username%>/endeavors/<%=@endeavor.id%>" method="POST">
