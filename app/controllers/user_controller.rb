@@ -7,6 +7,7 @@ class UserController < ApplicationController #can either inherit from SinatraBas
     end
 
    get '/signup' do #/users/new
+        session.clear           #signs user out if they try to view sign up page while logged in
         erb :"users/signup"
    end
 
