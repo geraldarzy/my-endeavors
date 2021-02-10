@@ -13,7 +13,7 @@ New Image: <input type="text" name="endeavor[pic]" value="<%=@endeavor.pic%>" ><
 New Caption: <input type="text" name="endeavor[pic_caption]" value="<%=@endeavor.pic_caption%>" ><br>
 <p><input type="checkbox" name="endeavor[status]", value="completed" <%='checked' if @endeavor.status=='completed'%>> I've finally trekked this endeavor! WOOOOOO!!</p>
 <br>
-<input class = "buttons" type="submit" value="Confirm Edit"><br>
+<button class = "buttons" type="submit" value="Confirm Edit"><span>Confirm Edit</span></button><br>
 <br>
 <%=@error%>
 </form>

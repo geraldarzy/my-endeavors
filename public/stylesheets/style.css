@@ -67,17 +67,18 @@ display: inline;
     text-align: right;
 }
 
-.buttons a {
+.buttons a,span{
     text-decoration: none;
     color: rgb(255, 156, 27);
 }
+
 .buttons {
     background-color: rgba(255, 255, 255, 0.5);
     border: none;
     padding: 8px 8px;
     display: inline-block;
     border-radius: 8px;
-    border: 2px solid rgb(250, 168, 61);
+    border: 2px solid rgb(172, 172, 172);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     cursor: pointer;
     margin: auto;

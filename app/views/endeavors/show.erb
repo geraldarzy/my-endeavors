@@ -33,7 +33,7 @@
     
     <form action="/users/<%=@user.username%>/endeavors/<%=@endeavor.id%>" method="POST">
         <input type="hidden" name="_method" id="hidden" value="delete">
-        <input class = "buttons" type="submit" value="Delete">
+        <button class = "buttons" type="submit" value="Delete"><span>Delete</span></button>
     </form>
     <%if @endeavor.status == 'completed'%>
         <img class = "completed-logo" src="https://www.onlygfx.com/wp-content/uploads/2018/04/completed-stamp-2.png" width = "350px" height="150px" alt="">
