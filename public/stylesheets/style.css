@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 * {
 list-style: none;
 margin: 0;
@@ -15,13 +16,13 @@ h6 {
 }
 
 body {
-background-color: rgb(250, 168, 61);
+background-color: rgba(250, 168, 61, 0.705);
 color: #333;
 font-family: 'Poppins', sans-serif;
 }
 
 .wrapper {
-background: rgb(241, 205, 107);
+background: rgba(255, 185, 56, 0.74);
 -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
 -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
 box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -68,14 +69,16 @@ display: inline;
 }
 
 .buttons a,span{
+    font-size: 1.5em;
+    font-family: 'Bebas Neue', cursive;
     text-decoration: none;
-    color: rgb(255, 156, 27);
+    color: rgba(250, 168, 61, 0.705);
 }
 
 .buttons {
     background-color: rgba(255, 255, 255, 0.5);
     border: none;
-    padding: 8px 8px;
+    padding: 3px 3px;
     display: inline-block;
     border-radius: 8px;
     border: 2px solid rgb(172, 172, 172);
@@ -87,6 +90,7 @@ display: inline;
 }
 
 .buttons:after {
+    color: rgba(250, 168, 61, 0.705);
     content: '\00bb';
     opacity: 0;
     top: 0;
@@ -99,7 +103,7 @@ display: inline;
   
 .buttons:hover:after {
     opacity: 1;
-    right: 0;
+    right: 20px;
   }
 
   .pictures{
@@ -108,4 +112,9 @@ display: inline;
 
   .user-home-buttons{
       padding: 15px 32px;
+  }
+
+  .home-welcome{
+    font-family: 'Poppins', sans-serif
+    
   }
