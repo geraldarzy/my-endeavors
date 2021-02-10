@@ -5,8 +5,12 @@
     <p>Give a short description about this endeavor: </p>
     <input type="text" name="endeavor[description]"> <br> 
     <br>
-    <p>Would you like to add a picture to your Endeavors post?</p>
+    <br>
+    <p>If you would like to post a picture with <br>your endeavor, please post a <br>dropbox link to the image.</p><br>
+    <p>Drop-box link:</p> 
     <input type="text" name="endeavor[pic]" ><br>
-    <input class = "buttons" type="submit" value="Create this endeavor!"><br>
+    <p>Add a short caption to your picture:</p>
+    <input type="text" name="endeavor[pic_caption]" ><br><br>
+    <input class = "buttons" type="submit" value="Create this endeavor!"><br> <br>
     <%=@error%>
 </form>

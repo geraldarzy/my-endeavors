@@ -35,8 +35,10 @@
         <input type="hidden" name="_method" id="hidden" value="delete">
         <input class = "buttons" type="submit" value="Delete">
     </form>
-    <img class = " pictures endeavor-solo-pic" src="<%=@endeavor.pic%>" alt="<%=@user.username%>'s <%=@endeavor.title%> picture" width="250" height="250px">
-       
+    <% if !!@endeavor.pic %>   
+        <img class = " pictures endeavor-solo-pic" src="<%=@endeavor.pic%>" alt="<%=@user.username%>'s <%=@endeavor.title%> picture" width="250" height="250px">
+        <p class="caption"><%=@endeavor.pic_caption%></p>
+    <%end%>
     </body>
     
 </html>

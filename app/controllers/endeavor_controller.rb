@@ -20,15 +20,20 @@ class EndeavorController < ApplicationController
             if params[:endeavor][:title].blank? || params[:endeavor][:description].blank?
                 @error = "This endeavor must have a tile and description. Do not leave it blank."
                 erb :"endeavors/new"
-            elsif !params[:endeavor][:pic].match("dl=0")
-                @error = "Image link must be a dropbox image link."
-                erb :"endeavors/new"
             elsif params[:endeavor][:pic] == ""
-                params[:endeavor][:pic] = "none"
+                params[:endeavor][:pic] = nil
+                @endeavor = Endeavor.create(params[:endeavor])
+                @user.endeavors << @endeavor
+                redirect "/users/#{@user.username}/endeavors/#{@endeavor.id}"
+            elsif !params[:endeavor][:pic].match("dl=0")
+                binding.pry
+                @error = "Image link invalid.<br>Link must be a dropbox image link.<br>Try the 'Share with Dropbox link."
+                erb :"endeavors/new"
             else
                 params[:endeavor][:pic] = params[:endeavor][:pic].gsub(/dl=0/, "raw=1")
                 @endeavor = Endeavor.create(params[:endeavor])
                 @user.endeavors << @endeavor
+                binding.pry
                 redirect "/users/#{@user.username}/endeavors/#{@endeavor.id}"
             end
         else
