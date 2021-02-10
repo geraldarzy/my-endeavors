@@ -90,8 +90,8 @@ class EndeavorController < ApplicationController
             if params[:endeavor][:title].blank? || params[:endeavor][:description].blank?
                 @error = "This endeavor must have a tile and description. Do not leave it blank."
                 erb :"endeavors/edit"
-            elsif params[:endeavor][:pic] == ""
-                params[:endeavor][:pic] = nil
+            elsif @endeavor.pic == ""
+                @endeavor.pic = nil
                 @endeavor.save
                 redirect "/users/#{@user.username}/endeavors/#{@endeavor.id}"
             elsif !params[:endeavor][:pic].match("dl=0")
