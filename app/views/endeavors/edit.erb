@@ -9,6 +9,10 @@ Make your edits here:
 <input type="hidden" name="_method" id="hidden" value="patch">
 New Title: <input type="text" name="endeavor[title]" value="<%=@endeavor.title%>" ><br>
 New Description: <input type="text" name="endeavor[description]" value="<%=@endeavor.description%>" ><br>
+New Image: <input type="text" name="endeavor[pic]" value="<%=@endeavor.pic%>" ><br>
+New Caption: <input type="text" name="endeavor[pic_caption]" value="<%=@endeavor.pic_caption%>" ><br>
 <br>
-<input class = "buttons" type="submit" value="Confirm Edit">
+<input class = "buttons" type="submit" value="Confirm Edit"><br>
+<br>
+<%=@error%>
 </form>

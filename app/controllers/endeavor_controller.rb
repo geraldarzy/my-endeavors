@@ -26,14 +26,12 @@ class EndeavorController < ApplicationController
                 @user.endeavors << @endeavor
                 redirect "/users/#{@user.username}/endeavors/#{@endeavor.id}"
             elsif !params[:endeavor][:pic].match("dl=0")
-                binding.pry
                 @error = "Image link invalid.<br>Link must be a dropbox image link.<br>Try the 'Share with Dropbox link."
                 erb :"endeavors/new"
             else
                 params[:endeavor][:pic] = params[:endeavor][:pic].gsub(/dl=0/, "raw=1")
                 @endeavor = Endeavor.create(params[:endeavor])
                 @user.endeavors << @endeavor
-                binding.pry
                 redirect "/users/#{@user.username}/endeavors/#{@endeavor.id}"
             end
         else
@@ -86,8 +84,24 @@ class EndeavorController < ApplicationController
             @endeavor = Endeavor.find(params[:endeavor_id])
             @endeavor.title = params[:endeavor][:title]
             @endeavor.description = params[:endeavor][:description]
-            @endeavor.save
-            redirect "/users/#{@user.username}/endeavors/#{@endeavor.id}"
+            @endeavor.pic = params[:endeavor][:pic]
+            @endeavor.pic_caption =params[:endeavor][:pic_caption]
+            
+            if params[:endeavor][:title].blank? || params[:endeavor][:description].blank?
+                @error = "This endeavor must have a tile and description. Do not leave it blank."
+                erb :"endeavors/edit"
+            elsif params[:endeavor][:pic] == ""
+                params[:endeavor][:pic] = nil
+                @endeavor.save
+                redirect "/users/#{@user.username}/endeavors/#{@endeavor.id}"
+            elsif !params[:endeavor][:pic].match("dl=0")
+                @error = "Image link invalid.<br>Link must be a dropbox image link.<br>Try the 'Share with Dropbox link."
+                erb :"endeavors/edit"
+            else
+                params[:endeavor][:pic] = params[:endeavor][:pic].gsub(/dl=0/, "raw=1")
+                @endeavor.save
+                redirect "/users/#{@user.username}/endeavors/#{@endeavor.id}"
+            end
         end
     end
 
