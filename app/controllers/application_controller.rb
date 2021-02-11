@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
 
   #personalized users homepage
   get "/users/:username"do
+    @endeavors = Endeavor.all
     @user = Helper.current_user(session)                        #gets current user by checking session id through helper class
     if @user == User.find_by(username: params[:username])       #FIX THIS potential problem where two diff users have same username
       erb :"users/user_home"                                    #shows the erb file    

@@ -6,22 +6,58 @@
 
     <body>
 
-        <h1>Hello, <%=@user.username.capitalize%>!</h1>
-        <br>
-        <br>
-        <br>
-        <br>
-        We're excited to help keep track of your past and future endeavors!
-        <br>
-        Click <a href="/users/<%=@user.username%>/endeavors">here</a> to see all of your endeavors.
-        <br>
-        <br>
-        <br>
-        <br>
-        Have a great trip in mind? Make it official and not just an idea! <br>
-        Create it here now! 
-        <a href="/users/<%=@user.username%>/endeavors/new">Create!</a>
-        <br>
+        <%@user.endeavors.each do |e|%>
+
+
+            <div class = "user-post-wrapper">
+                <h1 class = "user_home_title"><a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </h1><br><br>
+                <% if e.pic %>
+                    <img src="<%=e.pic%>" alt="<%=@user.username%>'s <%=e.title%> picture" width = "300px" height="300px"> <br>
+                    <p><%=e.pic_caption%></p> <br>
+                <% end %>
+                <%if e.status%>
+                    <img class = "completed-logo" src="https://www.onlygfx.com/wp-content/uploads/2018/04/completed-stamp-2.png" width = "350px" height="150px" alt="you-have-completed-picture">
+                <%end%>
+                <p><%=e.description%></p>
+                <p><%=%></p>
+                <button class="buttons"><span><a href="/users/<%=@user.username%>/endeavors/<%=e.id%>/edit">Edit</a></span></button>
+                <form action="/users/<%=@user.username%>/endeavors/<%=e.id%>" method="POST">
+                    <input type="hidden" name="_method" id="hidden" value="delete">
+                    <button class = "buttons" type="submit" value="Delete"><span>Delete</span></button>
+                </form>
+
+            </div>
+
+
+        <%end%>
+
+        <% if false %>
+            THIS IS HOW I FOUND TO COMMENT THINGS IN ERB
+            THIS CODE SHOWS ALL THE ENDEAVORS BY ALL THE USERS ON EVERYONES HOME PAGE
+            ALTHOUGH THERE ARE SOME BUGS, FOR ONE THE LINKS LIKE SHOW-SPECIFIC ROUTES
+            ARE CODED TO ONLY ALLOW THE OWNER INTO THEM
+            BIG FIX FOR ANOTHER TIME
+
+            <h1>if you uncomment and run this code, this is where the all endeavors start</h1>
+            <%@endeavors.each do |e|%>
+                <div class = "user-post-wrapper">
+                    <h1 class = "user_home_title"><a href="/users/<%=e.user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </h1><br><br>
+                    <img src="<%=e.pic%>" alt="<%=e.user.username%>'s <%=e.title%> picture" width = "300px" height="300px"> <br>
+                    <%if e.status%>
+                        <img class = "completed-logo" src="https://www.onlygfx.com/wp-content/uploads/2018/04/completed-stamp-2.png" width = "350px" height="150px" alt="you-have-completed-picture">
+                    <%end%>
+                    <p><%=e.pic_caption%></p> <br>
+                    <p><%=e.description%></p>
+                    <p><%=%></p>
+                    <button class="buttons"><span><a href="/users/<%=e.user.username%>/endeavors/<%=e.id%>/edit">Edit</a></span></button>
+                    <form action="/users/<%=e.user.username%>/endeavors/<%=e.id%>" method="POST">
+                        <input type="hidden" name="_method" id="hidden" value="delete">
+                        <button class = "buttons" type="submit" value="Delete"><span>Delete</span></button>
+                    </form>
+
+                </div>
+            <%end%>
+        <% end %>
 
         <footer>
             <img src="https://www.novinite.com/media/images/2019-08/photo_verybig_199790.jpg" alt="eiffel tower"width="200px" height="200 px">
