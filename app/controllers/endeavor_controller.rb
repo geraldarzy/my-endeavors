@@ -43,6 +43,7 @@ class EndeavorController < ApplicationController
     #list all users existing endeavors
     get "/users/:username/endeavors" do                                                                 
         if Helper.rightuser?(params,session)                                #uses Helper to check if user is right user. By matching params id against session id
+            @done_count = 0                                                 #counts completed endeavors to know which lists to display in erb
             @user = Helper.current_user(session)                            #sets user var to current user
             @endeavors = @user.endeavors                                    #sets endeavor isntance var to list of users endeavors for erb to work with
             if @endeavors.empty?                                            #if user has no endeavors, load empty erb view
