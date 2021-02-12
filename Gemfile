@@ -5,7 +5,7 @@ gem 'activerecord', '~> 5.2', '>= 4.2.6', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'  #gives access to prebuilt rake tasks
 gem 'rake'
 gem 'require_all'         #lets us require all app files at once
-gem 'sqlite3', '~> 1.3.6' #database we are using
+gem 'pg'
 gem 'thin'                #server we are using
 gem 'shotgun'             #allows automatic refresh
 gem 'pry'                 #debugging tool
