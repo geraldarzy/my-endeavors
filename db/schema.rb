@@ -16,17 +16,17 @@ ActiveRecord::Schema.define(version: 2021_02_10_043623) do
   enable_extension "plpgsql"
 
   create_table "endeavors", force: :cascade do |t|
-    t.string "title"
+    t.text "title"
     t.text "description"
     t.integer "user_id"
-    t.string "pic"
-    t.string "pic_caption"
+    t.text "pic"
+    t.text "pic_caption"
     t.text "status"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
+    t.text "username"
+    t.text "password_digest"
   end
 
 end
