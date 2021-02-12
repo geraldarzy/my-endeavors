@@ -163,4 +163,10 @@ display: inline;
     color:rgb(0, 0, 0);
     font-size: 1.79em;
   }
+
+  .completed-logo{
+      position: relative;left:330px;bottom:500px;
+      margin:0px;
+      padding: 0px;
+  }
  

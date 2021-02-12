@@ -15,12 +15,11 @@
                     <a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><img src="<%=e.pic%>" alt="<%=@user.username%>'s <%=e.title%> picture" width = "300px" height="300px"></a> <br>
                     <p><%=e.pic_caption%></p> <br>
                 <% end %>
+                <p><%=e.description%></p>
+                
                 <%if e.status%>
                     <img class = "completed-logo" src="https://www.onlygfx.com/wp-content/uploads/2018/04/completed-stamp-2.png" width = "350px" height="150px" alt="you-have-completed-picture">
                 <%end%>
-                <p><%=e.description%></p>
-                <p><%=%></p>
-
             </div>
 
 
