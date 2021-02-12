@@ -83,7 +83,7 @@ display: inline;
     font-family: 'Bebas Neue', cursive;
     text-decoration: none;
     color: rgba(250, 168, 61, 0.705);
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .buttons a {
     text-decoration: none;
@@ -113,16 +113,36 @@ display: inline;
 
   .pictures{
     padding: 5px;
-    position:relative; left:34px; top:20px;
+    position:relative; left:29px; top:20px;
   }
 
   .user-home-buttons{
-    padding: 5px 3px;
-    position:relative; left:34px;  top:30px;
+    padding: 5px 25px;
+    font-size: 1.25em;
   }
 
   .home-welcome{
     font-family: 'Poppins', sans-serif;
-    position:relative; left:34px;  top:30px;
-    
+    position:relative; left:29px;  top:30px;
+    display: inline-block;
+    padding: 1em;
+    font-size: 1.25em;
+    text-align: right;
   }
+
+  .home-signup {
+    position: relative; left: 50px;
+  }
+  .home-login {
+    position: relative; top: 10px; left:141px;
+  }
+  
+  .login-text{
+      position:relative;left:115px;
+  }
+
+  .home-home-choices{
+    position: relative; left: 300px; bottom: 35px;
+  }
+
+ 
