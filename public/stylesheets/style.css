@@ -178,4 +178,7 @@ display: inline;
     position: relative;bottom: 600px;left:580px;
     transform: rotate(47deg);
   }
- 
+  .show-specific-desc {
+    max-width: 50%;
+  }
+  
