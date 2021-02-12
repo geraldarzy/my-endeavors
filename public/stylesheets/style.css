@@ -112,15 +112,17 @@ display: inline;
   }
 
   .pictures{
-    
-   
+    padding: 5px;
+    position:relative; left:34px; top:20px;
   }
 
   .user-home-buttons{
-      padding: 15px 32px;
+    padding: 5px 3px;
+    position:relative; left:34px;  top:30px;
   }
 
   .home-welcome{
-    font-family: 'Poppins', sans-serif
+    font-family: 'Poppins', sans-serif;
+    position:relative; left:34px;  top:30px;
     
   }
