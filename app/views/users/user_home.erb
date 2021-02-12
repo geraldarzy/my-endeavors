@@ -20,10 +20,10 @@
                 <%end%>
                 <p><%=e.description%></p>
                 <p><%=%></p>
-                <button class="buttons"><span><a href="/users/<%=@user.username%>/endeavors/<%=e.id%>/edit">Edit</a></span></button>
+                <button class="buttons"><a href="/users/<%=@user.username%>/endeavors/<%=e.id%>/edit">Edit</a></button>
                 <form action="/users/<%=@user.username%>/endeavors/<%=e.id%>" method="POST">
                     <input type="hidden" name="_method" id="hidden" value="delete">
-                    <button class = "buttons" type="submit" value="Delete"><span>Delete</span></button>
+                    <button class = "buttons" type="submit" value="Delete">Delete</button>
                 </form>
 
             </div>
@@ -49,10 +49,10 @@
                     <p><%=e.pic_caption%></p> <br>
                     <p><%=e.description%></p>
                     <p><%=%></p>
-                    <button class="buttons"><span><a href="/users/<%=e.user.username%>/endeavors/<%=e.id%>/edit">Edit</a></span></button>
+                    <button class="buttons"><a href="/users/<%=e.user.username%>/endeavors/<%=e.id%>/edit">Edit</a></button>
                     <form action="/users/<%=e.user.username%>/endeavors/<%=e.id%>" method="POST">
                         <input type="hidden" name="_method" id="hidden" value="delete">
-                        <button class = "buttons" type="submit" value="Delete"><span>Delete</span></button>
+                        <button class = "buttons" type="submit" value="Delete">Delete</button>
                     </form>
 
                 </div>
