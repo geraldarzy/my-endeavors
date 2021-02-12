@@ -52,3 +52,12 @@ test:
   username: arzy
   password:
   timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: my_endeavors_production
+  pool: 5
+  username: arzy
+  password:
+  timeout: 5000
