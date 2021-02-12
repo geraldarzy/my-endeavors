@@ -165,8 +165,17 @@ display: inline;
   }
 
   .completed-logo{
-      position: relative;left:330px;bottom:500px;
+      position: relative;left:380px;bottom:500px;
       margin:0px;
       padding: 0px;
+  }
+
+  .solo-show-pic{
+      position: relative;bottom: 300px;left:450px;
+  }
+
+  .completed-logo-solo{
+    position: relative;bottom: 600px;left:580px;
+    transform: rotate(47deg);
   }
  

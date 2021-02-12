@@ -35,12 +35,12 @@
         <input type="hidden" name="_method" id="hidden" value="delete">
         <button class = "buttons" type="submit" value="Delete">Delete</button>
     </form>
-    <%if @endeavor.status == 'completed'%>
-        <img class = "completed-logo" src="https://www.onlygfx.com/wp-content/uploads/2018/04/completed-stamp-2.png" width = "350px" height="150px" alt="">
-    <%end%>
     <% if !!@endeavor.pic %>   
-        <img class = " pictures endeavor-solo-pic" src="<%=@endeavor.pic%>" alt="<%=@user.username%>'s <%=@endeavor.title%> picture" width="250" height="250px">
-        <p class="caption"><%=@endeavor.pic_caption%></p>
+        <img class = "endeavor-solo-pic solo-show-pic" src="<%=@endeavor.pic%>" alt="<%=@user.username%>'s <%=@endeavor.title%> picture" width="250" height="250px">
+        <p class="pic-caption solo-show-pic"><%=@endeavor.pic_caption%></p>
+    <%end%>
+    <%if @endeavor.status == 'completed'%>
+        <img class = "completed-logo-solo" src="https://www.onlygfx.com/wp-content/uploads/2018/04/completed-stamp-2.png" width = "350px" height="150px" alt="">
     <%end%>
     </body>
     
