@@ -9,10 +9,10 @@
         <%@user.endeavors.each do |e|%>
 
 
-            <div class = "user-post-wrapper">
-                <h1 class = "user_home_title"><a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </h1><br><br>
+            <div class = "user-home-wrapper">
+                <h1 class = "user_home_title"><a class = "user_home_title" href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </h1><br><br>
                 <% if e.pic %>
-                    <img src="<%=e.pic%>" alt="<%=@user.username%>'s <%=e.title%> picture" width = "300px" height="300px"> <br>
+                    <a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><img src="<%=e.pic%>" alt="<%=@user.username%>'s <%=e.title%> picture" width = "300px" height="300px"></a> <br>
                     <p><%=e.pic_caption%></p> <br>
                 <% end %>
                 <%if e.status%>
@@ -20,11 +20,6 @@
                 <%end%>
                 <p><%=e.description%></p>
                 <p><%=%></p>
-                <button class="buttons"><a href="/users/<%=@user.username%>/endeavors/<%=e.id%>/edit">Edit</a></button>
-                <form action="/users/<%=@user.username%>/endeavors/<%=e.id%>" method="POST">
-                    <input type="hidden" name="_method" id="hidden" value="delete">
-                    <button class = "buttons" type="submit" value="Delete">Delete</button>
-                </form>
 
             </div>
 

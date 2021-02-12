@@ -145,4 +145,22 @@ display: inline;
     position: relative; left: 300px; bottom: 35px;
   }
 
+  .user-home-wrapper{
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.74);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 50px auto;
+    max-width: 960px;
+    padding: 5%; /* 18px / 800px */
+    width: 85%;
+  }
+  
+  .user_home_title {
+    font-family: 'Fjalla One', sans-serif;
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+    font-size: 1.79em;
+  }
  
