@@ -74,7 +74,9 @@ class EndeavorController < ApplicationController
         if Helper.rightuser?(params,session)                        #checks if right user
             @user = Helper.current_user(session)                    #assigns vars for erb to use
             @endeavor = Endeavor.find(params[:endeavor_id])
-            erb :"endeavors/edit"                       
+            @endeavor_pic = @endeavor.pic.gsub(/raw=1/, "dl=0")
+            binding.pry                 #ALWAYS use @endeavor_pic to set value of text-box for dl=0 to be later turned into raw=1 again
+            erb :"endeavors/edit"                           
         end
 
     end
@@ -100,7 +102,7 @@ class EndeavorController < ApplicationController
                 @error = "Image link invalid.<br>Link must be a dropbox image link.<br>Try the 'Share with Dropbox link."
                 erb :"endeavors/edit"
             else
-                params[:endeavor][:pic] = params[:endeavor][:pic].gsub(/dl=0/, "raw=1")             #if link does not have dl=0 in it, reject link, this is because the way the picture works, we can only display links from dropbox 
+                @endeavor.pic = params[:endeavor][:pic].gsub(/dl=0/, "raw=1")             #if link does not have dl=0 in it, reject link, this is because the way the picture works, we can only display links from dropbox  
                 @endeavor.save                                                                      #saves all the re-initialization that was done earlier
                 redirect "/users/#{@user.username}/endeavors/#{@endeavor.id}"
             end

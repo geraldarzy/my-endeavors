@@ -9,7 +9,7 @@ Make your edits here:
 <input type="hidden" name="_method" id="hidden" value="patch">
 New Title: <input type="text" name="endeavor[title]" value="<%=@endeavor.title%>" ><br>
 New Description:<br> <textarea rows="8" cols="25" id="textboxid" type="text" name="endeavor[description]" value="<%=@endeavor.description%>" ><%=@endeavor.description%></textarea><br>
-New Image: <input type="text" name="endeavor[pic]" value="<%=@endeavor.pic%>" ><br>
+New Image: <input type="text" name="endeavor[pic]" value="<%=@endeavor_pic%>" ><br>
 New Caption: <input type="text" name="endeavor[pic_caption]" value="<%=@endeavor.pic_caption%>" ><br>
 <p><input type="checkbox" name="endeavor[status]", value="completed" <%='checked' if @endeavor.status=='completed'%>> I've finally trekked this endeavor! WOOOOOO!!</p>
 <br>
