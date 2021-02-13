@@ -30,6 +30,9 @@ Endeavor.create(title: "title",description: "description", pic:"dropbox link", p
 
 The `endeavors_controller` takes this link and replaces the 'dl=0' at the end of the link and turns it into 'raw=1'. This is because the link dropbox provides is a link the picture surrounded by the dropbox website. If you turn the 'dl=0' into 'raw=1', the link directs you to just the image.
 
+```User.create(username: "admin", password:"password")```
+
+Bcrypt handles the salt and encryption part of storing the password. In the schema, the column is `password_digest` but we can access it with just `password`.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
