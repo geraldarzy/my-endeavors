@@ -74,8 +74,7 @@ class EndeavorController < ApplicationController
         if Helper.rightuser?(params,session)                        #checks if right user
             @user = Helper.current_user(session)                    #assigns vars for erb to use
             @endeavor = Endeavor.find(params[:endeavor_id])
-            @endeavor_pic = @endeavor.pic.gsub(/raw=1/, "dl=0")
-            binding.pry                 #ALWAYS use @endeavor_pic to set value of text-box for dl=0 to be later turned into raw=1 again
+            @endeavor_pic = @endeavor.pic.gsub(/raw=1/, "dl=0")             #ALWAYS use @endeavor_pic to set value of text-box for dl=0 to be later turned into raw=1 again
             erb :"endeavors/edit"                           
         end
 
