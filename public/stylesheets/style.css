@@ -181,4 +181,8 @@ display: inline;
   .show-specific-desc {
     max-width: 50%;
   }
+
+  .my_endeavors_tree_logo{
+    position: relative;bottom:850px;
+  }
   
