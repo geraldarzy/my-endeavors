@@ -23,4 +23,37 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+
+  helpers do 
+    #helper methods go here so that they're inherited by other controllers and also accessible in views
+    def authorized?
+      Endeavor.find_by(id:params[:endeavor_id]).user.id == session[:id]
+    end
+    def redirect_to_index_if_not_authorized
+      if !authorized? 
+        redirect "/users/#{current_user.username}/endeavors"
+      end
+    end
+    def right_url_user?
+      !!(User.find_by(username:params[:username]).id == current_user.id)
+    end
+    def redirect_if_not_right_url_user
+      if !right_url_user?
+        redirect "/"
+      end
+    end
+    def logged_in?
+      !!(session[:id])
+    end
+    def redirect_if_not_logged_in
+      if !logged_in?
+        redirect "/login"
+      end
+    end
+
+    def current_user
+      User.find_by(id: session[:id])
+    end
+  end
+
 end
