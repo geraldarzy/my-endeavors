@@ -8,15 +8,15 @@
     <header class="main-header">
       <nav class = "nav main-nav">
         <ul>
-          <%if Helper.is_logged_in?(session)%>
+          <%if logged_in?%>
             <li>
-              <a href="/users/<%=@user.username%>">Home</a>
+              <a href="/users/<%=current_user.username%>">Home</a>
             </li>
             <li>
-              <a href="/users/<%=@user.username%>/endeavors">My Endeavors</a>
+              <a href="/users/<%=current_user.username%>/endeavors">My Endeavors</a>
             </li>
             <li>
-              <a href="/users/<%=@user.username%>/endeavors/new">Create</a>
+              <a href="/users/<%=current_user.username%>/endeavors/new">Create</a>
             </li>
             <li>
               <a href="/logout">Logout</a>

@@ -1,4 +1,4 @@
-<h1>Hello, <%=@user.username.capitalize%>!</h1><br><br><br><br>
+<h1>Hello, <%=current_user.username.capitalize%>!</h1><br><br><br><br>
 
 <% @endeavors.each do |e| %>
    <% if e.status == 'completed' %>
@@ -12,7 +12,7 @@
         <%@endeavors.each do |e|%>
                 <%if !(e.status == 'completed')%>
                     <li>
-                    <h3>•<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3>
+                    <h3>•<a href="/users/<%=current_user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3>
                     </li><br>
                 <%end%>
         <%end%>
@@ -29,7 +29,7 @@
         <%@endeavors.each do |e|%>
                 <%if (e.status == 'completed')%>
                     <li>
-                        <h3>•<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3>
+                        <h3>•<a href="/users/<%=current_user.username%>/endeavors/<%=e.id%>"><%=e.title%></a></h3>
                     </li><br>
                 <%end%>
         <%end%>

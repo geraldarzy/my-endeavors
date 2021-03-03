@@ -1,4 +1,5 @@
-<form action="/users/<%=Helper.current_user(session).username%>/endeavors" method="POST">
+<form action="/users/<%=current_user.username%>/endeavors" method="POST">
+
     <p>What would you like to call your new endeavor?:</p>
     <input type="text" name="endeavor[title]">
     <br>
@@ -13,5 +14,9 @@
     <input type="text" name="endeavor[pic_caption]" ><br><br>
     <p><input type="checkbox" name="endeavor[status]", value="completed"> I've already completed this endeavor!</p><br><br>
     <button class = "buttons" type="submit" value="Create this endeavor!">Create this endeavor!</button><br> <br>
-    <%=@error%>
+    <ul>
+        <%@endeavor.errors.full_messages.each do |error|%>
+            <li><%=error%></li>
+        <%end%>
+    </ul>
 </form>

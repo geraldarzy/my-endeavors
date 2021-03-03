@@ -10,4 +10,5 @@ ActiveRecord::Base.establish_connection(
 )
 
 require './app/controllers/application_controller'
+require_relative "../app/validators/dropbox_link_validator"
 require_all 'app'

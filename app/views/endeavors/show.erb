@@ -6,7 +6,7 @@
 
     <body>
 
-    <h3>Hello, <%=@user.username.capitalize%></h3>
+    <h3>Hello, <%=current_user.username.capitalize%></h3>
 
     <br>
     
@@ -16,27 +16,27 @@
     <br>
     <br>
     
-    <%if @users_endeavors.count>1%>
+    <%if current_user.endeavors.count>1%>
         Here are your other endeavors: <br><br>
-        <%@users_endeavors.each do |e|%>
+        <%current_user.endeavors.each do |e|%>
             <%if !(e==@endeavor)%>
-                <p> •<a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </p>
+                <p> •<a href="/users/<%=current_user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </p>
             <%end%>
         <%end%>
     <%end%>
     <br>
     <br>
-    <button class="buttons"><a href="/users/<%=@user.username%>/endeavors">My Endeavors</a> </button>
+    <button class="buttons"><a href="/users/<%=current_user.username%>/endeavors">My Endeavors</a> </button>
     <br>
-    <button class="buttons"><a href="/users/<%=@user.username%>/endeavors/<%=@endeavor.id%>/edit">Edit</a> </button>
+    <button class="buttons"><a href="/users/<%=current_user.username%>/endeavors/<%=@endeavor.id%>/edit">Edit</a> </button>
     <br>
     
-    <form action="/users/<%=@user.username%>/endeavors/<%=@endeavor.id%>" method="POST">
+    <form action="/users/<%=current_user.username%>/endeavors/<%=@endeavor.id%>" method="POST">
         <input type="hidden" name="_method" id="hidden" value="delete">
         <button class = "buttons" type="submit" value="Delete">Delete</button>
     </form>
-    <% if !!@endeavor.pic %>   
-        <img class = "endeavor-solo-pic solo-show-pic" src="<%=@endeavor.pic%>" alt="<%=@user.username%>'s <%=@endeavor.title%> picture" width="250" height="250px">
+    <% if !!@endeavor.picture_available? %>   
+        <img class = "endeavor-solo-pic solo-show-pic" src="<%=@endeavor.get_usable_link%>" alt="<%=current_user.username%>'s <%=@endeavor.title%> picture" width="250" height="250px">
         <p class="pic-caption solo-show-pic"><%=@endeavor.pic_caption%></p>
     <%end%>
     <%if @endeavor.status == 'completed'%>
