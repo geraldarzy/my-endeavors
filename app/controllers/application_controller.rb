@@ -14,13 +14,9 @@ class ApplicationController < Sinatra::Base
 
   #personalized users homepage
   get "/users/:username"do
-    @endeavors = Endeavor.all
-    @user = Helper.current_user(session)                        #gets current user by checking session id through helper class
-    if @user == User.find_by(username: params[:username])       #FIX THIS potential problem where two diff users have same username
-      erb :"users/user_home"                                    #shows the erb file    
-    else
-      erb :error                                                #leads you to error if you @user does not match params[:username]
-    end
+    redirect_if_not_logged_in
+    redirect_if_not_right_url_user
+    erb :"users/user_home"
   end
 
 
@@ -39,7 +35,7 @@ class ApplicationController < Sinatra::Base
     end
     def redirect_if_not_right_url_user
       if !right_url_user?
-        redirect "/"
+        redirect "/" #flash message? something like redirect "/", alert: "Cannot access other users homepage."
       end
     end
     def logged_in?

@@ -6,13 +6,11 @@
 
     <body>
 
-        <%@user.endeavors.each do |e|%>
-
-
+        <%current_user.endeavors.each do |e|%>
             <div class = "user-home-wrapper">
-                <h1 class = "user_home_title"><a class = "user_home_title" href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </h1><br><br>
+                <h1 class = "user_home_title"><a class = "user_home_title" href="/users/<%=current_user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </h1><br><br>
                 <% if e.pic %>
-                    <a href="/users/<%=@user.username%>/endeavors/<%=e.id%>"><img src="<%=e.pic%>" alt="<%=@user.username%>'s <%=e.title%> picture" width = "300px" height="300px"></a> <br>
+                    <a href="/users/<%=current_user.username%>/endeavors/<%=e.id%>"><img src="<%=e.pic%>" alt="<%=current_user.username%>'s <%=e.title%> picture" width = "300px" height="300px"></a> <br>
                     <p><%=e.pic_caption%></p> <br>
                 <% end %>
                 <p><%=e.description%></p>
@@ -21,38 +19,7 @@
                     <img class = "completed-logo" src="https://www.onlygfx.com/wp-content/uploads/2018/04/completed-stamp-2.png" width = "350px" height="150px" alt="you-have-completed-picture">
                 <%end%>
             </div>
-
-
         <%end%>
-
-        <% if false %>
-            THIS IS HOW I FOUND TO COMMENT THINGS IN ERB
-            THIS CODE SHOWS ALL THE ENDEAVORS BY ALL THE USERS ON EVERYONES HOME PAGE
-            ALTHOUGH THERE ARE SOME BUGS, FOR ONE THE LINKS LIKE SHOW-SPECIFIC ROUTES
-            ARE CODED TO ONLY ALLOW THE OWNER INTO THEM
-            BIG FIX FOR ANOTHER TIME
-
-            <h1>if you uncomment and run this code, this is where the all endeavors start</h1>
-            <%@endeavors.each do |e|%>
-                <div class = "user-post-wrapper">
-                    <h1 class = "user_home_title"><a href="/users/<%=e.user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </h1><br><br>
-                    <img src="<%=e.pic%>" alt="<%=e.user.username%>'s <%=e.title%> picture" width = "300px" height="300px"> <br>
-                    <%if e.status%>
-                        <img class = "completed-logo" src="https://www.onlygfx.com/wp-content/uploads/2018/04/completed-stamp-2.png" width = "350px" height="150px" alt="you-have-completed-picture">
-                    <%end%>
-                    <p><%=e.pic_caption%></p> <br>
-                    <p><%=e.description%></p>
-                    <p><%=%></p>
-                    <button class="buttons"><a href="/users/<%=e.user.username%>/endeavors/<%=e.id%>/edit">Edit</a></button>
-                    <form action="/users/<%=e.user.username%>/endeavors/<%=e.id%>" method="POST">
-                        <input type="hidden" name="_method" id="hidden" value="delete">
-                        <button class = "buttons" type="submit" value="Delete">Delete</button>
-                    </form>
-
-                </div>
-            <%end%>
-        <% end %>
-
         <footer>
             <img src="https://www.novinite.com/media/images/2019-08/photo_verybig_199790.jpg" alt="eiffel tower"width="200px" height="200 px">
             <img src="https://thumbor.thedailymeal.com/QOuw1z3VzY5p7E4U2vd01ofzLk0=/870x565/https://www.theactivetimes.com/sites/default/files/2020/02/20/00_Hero.jpg" alt="colloseum"width="200px" height="200 px">
