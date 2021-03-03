@@ -1,6 +1,7 @@
 
 class Endeavor < ActiveRecord::Base
-
+   include ActiveModel::Validations
+   validates_with DropboxLinkValidator
 
    validates :title, presence: true
    validates :description, presence: true
