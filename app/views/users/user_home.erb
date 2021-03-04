@@ -9,8 +9,8 @@
         <%current_user.endeavors.each do |e|%>
             <div class = "user-home-wrapper">
                 <h1 class = "user_home_title"><a class = "user_home_title" href="/users/<%=current_user.username%>/endeavors/<%=e.id%>"><%=e.title%></a> </h1><br><br>
-                <% if e.pic %>
-                    <a href="/users/<%=current_user.username%>/endeavors/<%=e.id%>"><img src="<%=e.pic%>" alt="<%=current_user.username%>'s <%=e.title%> picture" width = "300px" height="300px"></a> <br>
+                <% if e.picture_available? %>
+                    <a href="/users/<%=current_user.username%>/endeavors/<%=e.id%>"><img src="<%=e.get_usable_link%>" alt="<%=current_user.username%>'s <%=e.title%> picture" width = "300px" height="300px"></a> <br>
                     <p><%=e.pic_caption%></p> <br>
                 <% end %>
                 <p><%=e.description%></p>
